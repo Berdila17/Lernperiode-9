@@ -12,7 +12,17 @@ https://www.youtube.com/watch?v=SYWcuf-Z3mk&list=PLC3y8-rFHvwiYZOsc2D8AO1MYwLjZQ
 
 ## 27.02.2026
 
-- [ ] Die Datei sauberer strukturieren
-- [ ] Button hinzufügen der irgend eine Aktion ausführt wie Hallo sagen
+- [x] Die Datei sauberer strukturieren
+- [x] Button hinzufügen der irgend eine Aktion ausführt wie Hallo sagen
 - [ ] Die coolen CSS Dateien ausporbieren um die Sachen zu verschönern 
-- [ ] Kondition einbauen (nur etwas anzeigen wenn die Kondition erfüllt ist)
+- [x] Kondition einbauen (nur etwas anzeigen wenn die Kondition erfüllt ist)
+
+ Heute habe ich die Datei schöner strukturiert damit ich weiss was wo ist, Danach habe ich einen Clear Button eingebaut der das was im Eingabefeld steht direkt alles auslöschen kann und zum Schluss noch eine Kondition eingebaut die Schaut ob ein Feld leer ist also nur Leertaste. Ich wollte versuchen Tailwind zu integrieren aber ich hatte Probleme bei der Installation die ich nächstes mal versuchen werde Sie zu beheben. Diesmal hatte ich keine Zeit zum Schluss.
+
+
+ ## 06.03.2026
+
+ - [ ] Tailorwind richtig einbauen und das Titel damit stylen
+ - [ ] Timer für die Begrüssung einbauen so das die Nachricht nur  10 Sekunden angezeigt wird
+ - [ ] Liste einfügen die Begrüssungen speichert
+ - [ ] Fehlerbhandlung einbauen so das wenn der Name leer ist eine Nachricht kommt wie Eingabe darf nicht leer sein.
