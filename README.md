@@ -23,6 +23,17 @@ https://www.youtube.com/watch?v=SYWcuf-Z3mk&list=PLC3y8-rFHvwiYZOsc2D8AO1MYwLjZQ
  ## 06.03.2026
 
  - [ ] Tailorwind richtig einbauen und das Titel damit stylen
- - [ ] Timer für die Begrüssung einbauen so das die Nachricht nur  10 Sekunden angezeigt wird
- - [ ] Liste einfügen die Begrüssungen speichert
- - [ ] Fehlerbhandlung einbauen so das wenn der Name leer ist eine Nachricht kommt wie Eingabe darf nicht leer sein.
+ - [x] Timer für die Begrüssung einbauen so das die Nachricht nur  10 Sekunden angezeigt wird
+ - [x] Liste einfügen die Begrüssungen speichert
+ - [x] Fehlerbhandlung einbauen so das wenn der Name leer ist eine Nachricht kommt wie Eingabe darf nicht leer sein.
+
+
+Heute habe ich eine Fehlerbehandlung eingebaut die überprüft ob das Eingabefeld leer ist. Wenn nichts eingegeben wird erscheint jetzt eine Nachricht dass die Eingabe nicht leer sein darf. Danach habe ich eine Liste erstellt die alle Begrüssungen speichert damit man sehen kann welche Namen schon eingegeben wurden. Zum Schluss habe ich noch einen Timer eingebaut damit die Begrüssung nur für 10 Sekunden angezeigt wird und danach automatisch wieder verschwindet. Dabei habe ich gelernt wie man mit Bedingungen, Arrays und Funktionen in Svelte arbeiten kann. Tailorwind konnte installiert werden aber ich konnte nicht damit Arbeiten aufgrund des Mangels am Zeit.
+
+
+## 13.03.2026
+
+- [ ] Titel mit Tailorwind stylen.
+- [ ] Einzelne Begrüssungen aus der Liste löschen können
+- [ ] Liste zurücksetzen können
+- [ ] Begrüssungen sollen dauerhaft gespeichert werden.
