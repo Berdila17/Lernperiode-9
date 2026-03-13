@@ -33,7 +33,17 @@ Heute habe ich eine Fehlerbehandlung eingebaut die überprüft ob das Eingabefel
 
 ## 13.03.2026
 
-- [ ] Titel mit Tailorwind stylen.
-- [ ] Einzelne Begrüssungen aus der Liste löschen können
-- [ ] Liste zurücksetzen können
-- [ ] Begrüssungen sollen dauerhaft gespeichert werden.
+- [x] Titel mit Tailorwind stylen.
+- [x] Einzelne Begrüssungen aus der Liste löschen können
+- [x] Liste zurücksetzen können
+- [x] Begrüssungen sollen dauerhaft gespeichert werden.
+
+Heute habe ich weiter an meiner Svelte Anwendung gearbeitet. Zuerst habe ich mich damit beschäftigt wie ich den Titel mit Tailwind stylen könnte damit die Seite moderner aussieht. Danach habe ich die Liste erweitert damit man einzelne Begrüssungen wieder löschen kann und nicht nur neue hinzufügen. Anschliessend habe ich noch eine Funktion eingebaut um die ganze Liste mit einem Klick zurückzusetzen. Zum Schluss habe ich angefangen die Begrüssungen dauerhaft zu speichern damit sie auch nach einem Neuladen der Seite erhalten bleiben. 
+
+
+## 20.03.2026
+
+- [ ] Eingabe verbessern (doppelte Namen sollen nicht erlaubt werden)
+- [ ] Begrüssung erweitern mehr als Hallo name
+- [ ] Liste nach alphabetischer Reihenfolge ändern können
+- [ ] Letzte Begrüssung die angezeigt wird anzeigen können
