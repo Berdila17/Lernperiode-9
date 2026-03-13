@@ -1,30 +1,38 @@
 <script>
-  // JS
+  import { onMount } from "svelte";
+
   let name = '';
-let begruessungen = /** @type {string[]} */ ([]);
+  let begruessungen = /** @type {string[]} */ ([]);
   let fehler = '';
   let showGreeting = false;
+
+  // Begrüssungen aus localStorage laden
+  onMount(() => {
+    const gespeicherte = localStorage.getItem("begruessungen");
+    if (gespeicherte) {
+      begruessungen = JSON.parse(gespeicherte);
+    }
+  });
+
+  function speichern() {
+    localStorage.setItem("begruessungen", JSON.stringify(begruessungen));
+  }
 
   function begruessen() {
     const saubererName = name.trim();
 
-    // Fehlerbehandlung
     if (saubererName.length === 0) {
-      fehler = 'Eingabe darf nicht leer sein';
+      fehler = "Eingabe darf nicht leer sein";
       showGreeting = false;
       return;
     }
 
-    // Fehler zurücksetzen
     fehler = '';
-
-    // Begrüssung anzeigen
     showGreeting = true;
 
-    // Begrüssung speichern
     begruessungen = [...begruessungen, `Hello ${saubererName}`];
+    speichern();
 
-    // Timer: Nachricht nach 10 Sekunden ausblenden
     setTimeout(() => {
       showGreeting = false;
     }, 10000);
@@ -35,10 +43,26 @@ let begruessungen = /** @type {string[]} */ ([]);
     showGreeting = false;
     fehler = '';
   }
+
+  // Einzelne Begrüssung löschen
+  function loescheBegruessung(index) {
+    begruessungen.splice(index, 1);
+    begruessungen = [...begruessungen];
+    speichern();
+  }
+
+  // Liste komplett leeren
+  function listeLeeren() {
+    begruessungen = [];
+    speichern();
+  }
 </script>
 
 <!-- HTML -->
-<h1>Tracer Bullet</h1>
+
+<h1 class="text-3xl font-bold text-blue-700 mb-4">
+  Tracer Bullet
+</h1>
 
 <input bind:value={name} placeholder="Name:" />
 
@@ -48,6 +72,10 @@ let begruessungen = /** @type {string[]} */ ([]);
 
 <button on:click={loeschenName}>
   Clear
+</button>
+
+<button on:click={listeLeeren}>
+  Liste leeren
 </button>
 
 {#if fehler}
@@ -61,24 +89,20 @@ let begruessungen = /** @type {string[]} */ ([]);
 <h2>Gespeicherte Begrüssungen</h2>
 
 <ul>
-  {#each begruessungen as begruessung}
-    <li>{begruessung}</li>
+  {#each begruessungen as begruessung, index}
+    <li>
+      {begruessung}
+      <button on:click={() => loescheBegruessung(index)}>
+        Delete
+      </button>
+    </li>
   {/each}
 </ul>
 
 <style>
-  /* CSS */
-  h1 {
-    color: darkblue;
-  }
-
   input {
     padding: 6px;
     margin-top: 10px;
-  }
-
-  p {
-    font-weight: bold;
   }
 
   button {
