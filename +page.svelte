@@ -5,8 +5,10 @@
   let begruessungen = /** @type {string[]} */ ([]);
   let fehler = '';
   let showGreeting = false;
+  let aktuelleBegruessung = '';
 
-  // Begrüssungen aus localStorage laden
+  const greetings = ['Hallo', 'Willkommen', 'Hi', 'Schön dich zu sehen'];
+
   onMount(() => {
     const gespeicherte = localStorage.getItem("begruessungen");
     if (gespeicherte) {
@@ -22,15 +24,30 @@
     const saubererName = name.trim();
 
     if (saubererName.length === 0) {
-      fehler = "Eingabe darf nicht leer sein";
+      fehler = 'Eingabe darf nicht leer sein';
+      showGreeting = false;
+      return;
+    }
+
+    const nameSchonVorhanden = begruessungen.some((eintrag) =>
+      eintrag.toLowerCase().includes(saubererName.toLowerCase())
+    );
+
+    if (nameSchonVorhanden) {
+      fehler = 'Dieser Name wurde schon eingegeben';
       showGreeting = false;
       return;
     }
 
     fehler = '';
+
+    const zufallsIndex = Math.floor(Math.random() * greetings.length);
+    const greeting = greetings[zufallsIndex];
+
+    aktuelleBegruessung = `${greeting} ${saubererName}`;
     showGreeting = true;
 
-    begruessungen = [...begruessungen, `Hello ${saubererName}`];
+    begruessungen = [...begruessungen, aktuelleBegruessung];
     speichern();
 
     setTimeout(() => {
@@ -44,23 +61,30 @@
     fehler = '';
   }
 
-  // Einzelne Begrüssung löschen
   function loescheBegruessung(index) {
     begruessungen.splice(index, 1);
     begruessungen = [...begruessungen];
     speichern();
   }
 
-  // Liste komplett leeren
   function listeLeeren() {
     begruessungen = [];
+    aktuelleBegruessung = '';
     speichern();
   }
+
+  function sortiereBegruessungen() {
+    begruessungen = [...begruessungen].sort((a, b) => a.localeCompare(b));
+    speichern();
+  }
+
+  $: letzteBegruessung =
+    begruessungen.length > 0 ? begruessungen[begruessungen.length - 1] : '';
 </script>
 
 <!-- HTML -->
 
-<h1 class="text-3xl font-bold text-blue-700 mb-4">
+<h1 class="text-4xl font-bold text-cyan-700 mb-4">
   Tracer Bullet
 </h1>
 
@@ -78,12 +102,22 @@
   Liste leeren
 </button>
 
+<button on:click={sortiereBegruessungen}>
+  A-Z sortieren
+</button>
+
 {#if fehler}
   <p class="error">{fehler}</p>
 {/if}
 
 {#if showGreeting}
-  <p>Hello {name}</p>
+  <p>{aktuelleBegruessung}</p>
+{/if}
+
+{#if letzteBegruessung}
+  <p class="letzte">
+    Letzte Begrüssung: {letzteBegruessung}
+  </p>
 {/if}
 
 <h2>Gespeicherte Begrüssungen</h2>
@@ -120,6 +154,12 @@
 
   .error {
     color: red;
+    font-weight: bold;
+    margin-top: 10px;
+  }
+
+  .letzte {
+    color: darkblue;
     font-weight: bold;
     margin-top: 10px;
   }
