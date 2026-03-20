@@ -43,7 +43,18 @@ Heute habe ich weiter an meiner Svelte Anwendung gearbeitet. Zuerst habe ich mic
 
 ## 20.03.2026
 
-- [ ] Eingabe verbessern (doppelte Namen sollen nicht erlaubt werden)
-- [ ] Begrüssung erweitern mehr als Hallo name
-- [ ] Liste nach alphabetischer Reihenfolge ändern können
-- [ ] Letzte Begrüssung die angezeigt wird anzeigen können
+- [x] Eingabe verbessern (doppelte Namen sollen nicht erlaubt werden)
+- [x] Begrüssung erweitern mehr als Hallo name
+- [x] Liste nach alphabetischer Reihenfolge ändern können
+- [x] Letzte Begrüssung die angezeigt wird anzeigen können
+
+Heute habe ich die Anwendung weiter verbessert. Zuerst habe ich die Eingabe angepasst sodass doppelte Namen nicht mehr erlaubt sind und eine Fehlermeldung erscheint wenn ein Name schon vorhanden ist. Danach habe ich die Begrüssung erweitert so das nicht immer nur Hello angezeigt wird sondern auch andere Begrüssungen wie Hallo, Willkommen oder Hi. Anschliessend habe ich eine Funktion eingebaut, mit der ich die gespeicherten Begrüssungen alphabetisch sortieren kann. Zum Schluss habe ich noch die letzte angezeigte Begrüssung sichtbar gemacht,so sieht man immer direkt sieht was zuletzt hinzugefügt wurde. 
+
+
+## 27.03.2026
+
+- [ ] Eingabe mit Enter-Taste absenden können
+- [ ] Zeitpunkt der Begrüssung speichern
+- [ ] Leere Liste schöner behandeln (keine leere Liste sondern eine Nachricht wie keine Begrüssungen gespeichert.)
+- [ ] Buttons und Input komplett mit Tailwind stylen
+
